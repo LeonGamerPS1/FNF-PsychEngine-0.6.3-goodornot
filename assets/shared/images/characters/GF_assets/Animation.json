@@ -1,0 +1,168 @@
+{
+"AN":{
+"N":"GF_ass_sets",
+"SN":"__BTA_TEMP_SPRITEMAP_PACKED_SYMBOL",
+"TL":{
+"L":[
+{
+"LN":"Ebene_1",
+"FR":[
+{
+"N":"GF Dancing Beat",
+"I":0,
+"DU":29,
+"E":[
+{"SI":{
+"SN":"GF Dancing Beat",
+"FF":0,
+"ST":"G",
+"TRP":{"x":0,"y":0},
+"LP":"LP",
+"MX":[1,0,0,1,-202.25,-2.45]
+}}]},{
+"N":"GF Duck",
+"I":29,
+"DU":3,
+"E":[
+{"SI":{
+"SN":"GF Duck",
+"FF":0,
+"ST":"G",
+"TRP":{"x":0,"y":0},
+"LP":"LP",
+"MX":[1,0,0,1,-202.05,-44.45]
+}}]},{
+"N":"GF Duck Hair Blowing",
+"I":32,
+"DU":3,
+"E":[
+{"SI":{
+"SN":"GF Duck Hair Blowing",
+"FF":0,
+"ST":"G",
+"TRP":{"x":0,"y":0},
+"LP":"LP",
+"MX":[1,0,0,1,-214.65,-52.35]
+}}]},{
+"N":"GF Dancing Beat Hair Landing",
+"I":35,
+"DU":29,
+"E":[
+{"SI":{
+"SN":"GF Dancing Beat Hair Landing",
+"FF":0,
+"ST":"G",
+"TRP":{"x":0,"y":0},
+"LP":"LP",
+"MX":[1,0,0,1,-202.25,-2.45]
+}}]},{
+"N":"GF Dancing Beat Hair blowing",
+"I":64,
+"DU":29,
+"E":[
+{"SI":{
+"SN":"GF Dancing Beat Hair blowing",
+"FF":0,
+"ST":"G",
+"TRP":{"x":0,"y":0},
+"LP":"LP",
+"MX":[1,0,0,1,-179.5,-14.2]
+}}]},{
+"N":"GF Dancing Beat Hair blowing CAR",
+"I":93,
+"DU":29,
+"E":[
+{"SI":{
+"SN":"GF Dancing Beat Hair blowing CAR",
+"FF":0,
+"ST":"G",
+"TRP":{"x":0,"y":0},
+"LP":"LP",
+"MX":[1,0,0,1,-245.3,-14.2]
+}}]},{
+"N":"GF Down Note",
+"I":122,
+"DU":19,
+"E":[
+{"SI":{
+"SN":"GF Down Note",
+"FF":0,
+"ST":"G",
+"TRP":{"x":0,"y":0},
+"LP":"LP",
+"MX":[1,0,0,1,-202.25,-18.35]
+}}]},{
+"N":"GF left note",
+"I":141,
+"DU":14,
+"E":[
+{"SI":{
+"SN":"GF left note",
+"FF":0,
+"ST":"G",
+"TRP":{"x":0,"y":0},
+"LP":"LP",
+"MX":[1,0,0,1,-202.25,-3.9]
+}}]},{
+"N":"GF Right Note",
+"I":155,
+"DU":14,
+"E":[
+{"SI":{
+"SN":"GF Right Note",
+"FF":0,
+"ST":"G",
+"TRP":{"x":0,"y":0},
+"LP":"LP",
+"MX":[1,0,0,1,-202.25,-5.45]
+}}]},{
+"N":"GF Up Note",
+"I":169,
+"DU":6,
+"E":[
+{"SI":{
+"SN":"GF Up Note",
+"FF":0,
+"ST":"G",
+"TRP":{"x":0,"y":0},
+"LP":"LP",
+"MX":[1,0,0,1,-202.25,-8]
+}}]},{
+"N":"gf sad",
+"I":175,
+"DU":79,
+"E":[
+{"SI":{
+"SN":"gf sad",
+"FF":0,
+"ST":"G",
+"TRP":{"x":0,"y":0},
+"LP":"LP",
+"MX":[1,0,0,1,-151.25,-326.4]
+}}]},{
+"N":"GF Cheer",
+"I":254,
+"DU":20,
+"E":[
+{"SI":{
+"SN":"GF Cheer",
+"FF":0,
+"ST":"G",
+"TRP":{"x":0,"y":0},
+"LP":"LP",
+"MX":[1,0,0,1,-202.25,-10.05]
+}}]},{
+"N":"GF FEAR ",
+"I":274,
+"DU":3,
+"E":[
+{"SI":{
+"SN":"GF FEAR ",
+"FF":0,
+"ST":"G",
+"TRP":{"x":0,"y":0},
+"LP":"LP",
+"MX":[1,0,0,1,-202.25,-10.95]
+}}]}
+]}
+]}}}
