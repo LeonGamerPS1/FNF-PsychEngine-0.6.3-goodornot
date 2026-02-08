@@ -433,4 +433,38 @@ class Note extends FlxSprite
 			frame = frames.frames[animation.frameIndex];
 		return clipRect = v;
 	}
+
+	public function clip(strum:StrumNote)
+	{
+		var center:Float = strum.y + Note.swagWidth / 2;
+		flipY = flipX = strum.downScroll;
+
+		if ((!mustPress && overlaps(strum) || mustPress && (wasGoodHit || prevNote.wasGoodHit)))
+		{
+			if (strum.downScroll)
+			{
+				if (y + height >= center)
+				{
+					var swagRect = clipRect ?? new FlxRect(0, 0, frameWidth, frameHeight);
+					swagRect.set(0, 0, frameWidth, frameHeight);
+					swagRect.height = (center - y) / scale.y;
+					swagRect.y = frameHeight - swagRect.height;
+
+					clipRect = swagRect;
+				}
+			}
+			else
+			{
+				if (y <= center)
+				{
+					var swagRect = clipRect ?? new FlxRect(0, 0, width / scale.x, height / scale.y);
+					swagRect.set(0, 0, frameWidth, frameHeight);
+					swagRect.y = (center - y) / scale.y;
+					swagRect.height -= swagRect.y;
+
+					clipRect = swagRect;
+				}
+			}
+		}
+	}
 }

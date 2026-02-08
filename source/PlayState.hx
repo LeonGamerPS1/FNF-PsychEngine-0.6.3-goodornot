@@ -2690,10 +2690,10 @@ class PlayState extends MusicBeatState
 
 	override public function update(elapsed:Float)
 	{
-		/*if (FlxG.keys.justPressed.NINE)
-			{
-				iconP1.swapOldIcon();
-		}*/
+		if (FlxG.keys.justPressed.NINE)
+		{
+			iconP1.swapOldIcon(boyfriend);
+		}
 		callOnLuas('onUpdate', [elapsed]);
 
 		switch (curStage)
@@ -2869,79 +2869,6 @@ class PlayState extends MusicBeatState
 			}
 		}
 
-		super.update(elapsed);
-
-		setOnLuas('curDecStep', curDecStep);
-		setOnLuas('curDecBeat', curDecBeat);
-
-		if (botplayTxt.visible)
-		{
-			botplaySine += 180 * elapsed;
-			botplayTxt.alpha = 1 - Math.sin((Math.PI * botplaySine) / 180);
-		}
-
-		if (controls.PAUSE && startedCountdown && canPause)
-		{
-			var ret:Dynamic = callOnLuas('onPause', [], false);
-			if (ret != FunkinLua.Function_Stop)
-			{
-				openPauseMenu();
-			}
-		}
-
-		if (FlxG.keys.anyJustPressed(debugKeysChart) && !endingSong && !inCutscene)
-		{
-			openChartEditor();
-		}
-
-		// FlxG.watch.addQuick('VOL', vocals.amplitudeLeft);
-		// FlxG.watch.addQuick('VOLRight', vocals.amplitudeRight);
-
-		var mult:Float = FlxMath.lerp(1, iconP1.scale.x, CoolUtil.boundTo(1 - (elapsed * 9), 0, 1));
-		iconP1.scale.set(mult, mult);
-		iconP1.updateHitbox();
-
-		var mult:Float = FlxMath.lerp(1, iconP2.scale.x, CoolUtil.boundTo(1 - (elapsed * 9), 0, 1));
-		iconP2.scale.set(mult, mult);
-		iconP2.updateHitbox();
-
-		var iconOffset:Int = 26;
-
-		iconP1.x = healthBar.x
-			+ (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01))
-			+ (150 - 150) / 2
-			- iconOffset;
-		iconP2.x = healthBar.x
-			+ (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01))
-			- (150) / 2
-			- iconOffset * 2;
-
-		if (health > 2)
-			health = 2;
-
-		if (healthBar.percent < 20)
-			iconP1.animation.curAnim.curFrame = 1;
-		else
-			iconP1.animation.curAnim.curFrame = 0;
-
-		if (healthBar.percent > 80)
-			iconP2.animation.curAnim.curFrame = 1;
-		else
-			iconP2.animation.curAnim.curFrame = 0;
-
-		if (FlxG.keys.anyJustPressed(debugKeysCharacter) && !endingSong && !inCutscene)
-		{
-			persistentUpdate = false;
-			paused = true;
-			cancelMusicFadeTween();
-			MusicBeatState.switchState(new CharacterEditorState(SONG.player2));
-		}
-
-		if (startedCountdown)
-		{
-			Conductor.songPosition += FlxG.elapsed * 1000;
-		}
-
 		if (startingSong)
 		{
 			if (startedCountdown && Conductor.songPosition >= 0)
@@ -2986,6 +2913,79 @@ class PlayState extends MusicBeatState
 			}
 
 			// Conductor.lastSongPos = FlxG.sound.music.time;
+		}
+
+		super.update(elapsed);
+
+		setOnLuas('curDecStep', curDecStep);
+		setOnLuas('curDecBeat', curDecBeat);
+
+		if (botplayTxt.visible)
+		{
+			botplaySine += 180 * elapsed;
+			botplayTxt.alpha = 1 - Math.sin((Math.PI * botplaySine) / 180);
+		}
+
+		if (controls.PAUSE && startedCountdown && canPause)
+		{
+			var ret:Dynamic = callOnLuas('onPause', [], false);
+			if (ret != FunkinLua.Function_Stop)
+			{
+				openPauseMenu();
+			}
+		}
+
+		if (FlxG.keys.anyJustPressed(debugKeysChart) && !endingSong && !inCutscene)
+		{
+			openChartEditor();
+		}
+
+		// FlxG.watch.addQuick('VOL', vocals.amplitudeLeft);
+		// FlxG.watch.addQuick('VOLRight', vocals.amplitudeRight);
+
+		var mult:Float = FlxMath.lerp(1, iconP1.scale.x, CoolUtil.boundTo(1 - (elapsed * 9), 0, 1));
+		iconP1.scale.set(mult, mult);
+		iconP1.updateHitbox();
+
+		var mult:Float = FlxMath.lerp(1, iconP2.scale.x, CoolUtil.boundTo(1 - (elapsed * 9), 0, 1));
+		iconP2.scale.set(mult, mult);
+		iconP2.updateHitbox();
+
+		var iconOffset:Int = 26;
+
+		iconP1.x = healthBar.x
+			+ (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01))
+			+ ((iconP1.width) - 150) / 2
+			- iconOffset;
+		iconP2.x = healthBar.x
+			+ (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01))
+			- (150) / 2
+			- iconOffset * 2;
+
+		if (health > 2)
+			health = 2;
+
+		if (healthBar.percent < 20)
+			iconP1.animation.curAnim.curFrame = 1;
+		else
+			iconP1.animation.curAnim.curFrame = 0;
+
+		if (healthBar.percent > 80)
+			iconP2.animation.curAnim.curFrame = 1;
+		else
+			iconP2.animation.curAnim.curFrame = 0;
+
+		if (FlxG.keys.anyJustPressed(debugKeysCharacter) && !endingSong && !inCutscene)
+		{
+			persistentUpdate = false;
+			paused = true;
+			cancelMusicFadeTween();
+			MusicBeatState.switchState(new CharacterEditorState(SONG.player2));
+		}
+
+		if (startedCountdown)
+		{
+			Conductor.songPosition += FlxG.elapsed * 1000;
 		}
 
 		if (camZooming)
@@ -3054,6 +3054,7 @@ class PlayState extends MusicBeatState
 					var strumGroup:FlxTypedGroup<StrumNote> = playerStrums;
 					if (!daNote.mustPress)
 						strumGroup = opponentStrums;
+					var strumNote = strumGroup.members[daNote.noteData];
 
 					var strumX:Float = strumGroup.members[daNote.noteData].x;
 					var strumY:Float = strumGroup.members[daNote.noteData].y;
@@ -3111,35 +3112,8 @@ class PlayState extends MusicBeatState
 						}
 					}
 
-					var center:Float = strumY + Note.swagWidth / 2;
-					if (strumGroup.members[daNote.noteData].sustainReduce
-						&& daNote.isSustainNote
-						&& (daNote.mustPress || !daNote.ignoreNote)
-						&& (!daNote.mustPress || (daNote.wasGoodHit || (daNote.prevNote.wasGoodHit && !daNote.canBeHit))))
-					{
-						if (strumScroll)
-						{
-							if (daNote.y - daNote.offset.y * daNote.scale.y + daNote.height >= center)
-							{
-								var swagRect = new FlxRect(0, 0, daNote.frameWidth, daNote.frameHeight);
-								swagRect.height = (center - daNote.y) / daNote.scale.y;
-								swagRect.y = daNote.frameHeight - swagRect.height;
-
-								daNote.clipRect = swagRect;
-							}
-						}
-						else
-						{
-							if (daNote.y + daNote.offset.y * daNote.scale.y <= center)
-							{
-								var swagRect = new FlxRect(0, 0, daNote.width / daNote.scale.x, daNote.height / daNote.scale.y);
-								swagRect.y = (center - daNote.y) / daNote.scale.y;
-								swagRect.height -= swagRect.y;
-
-								daNote.clipRect = swagRect;
-							}
-						}
-					}
+					if (daNote.isSustainNote)
+						daNote.clip(strumNote);
 
 					// Kill extremely late notes and cause misses
 					if (Conductor.songPosition > noteKillOffset + daNote.strumTime)
@@ -3198,20 +3172,21 @@ class PlayState extends MusicBeatState
 		paused = true;
 
 		// 1 / 1000 chance for Gitaroo Man easter egg
-		/*if (FlxG.random.bool(0.1))
-			{
-				// gitaroo man easter egg
-				cancelMusicFadeTween();
-				MusicBeatState.switchState(new GitarooPause());
-			}
-			else { */
-		if (FlxG.sound.music != null)
+		if (FlxG.random.bool(0.1))
 		{
-			FlxG.sound.music.pause();
-			vocals.pause();
+			// gitaroo man easter egg
+			cancelMusicFadeTween();
+			MusicBeatState.switchState(new GitarooPause());
 		}
-		openSubState(new PauseSubState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
-		// }
+		else
+		{
+			if (FlxG.sound.music != null)
+			{
+				FlxG.sound.music.pause();
+				vocals.pause();
+			}
+			openSubState(new PauseSubState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
+		}
 
 		#if desktop
 		DiscordClient.changePresence(detailsPausedText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter());
@@ -4621,10 +4596,10 @@ class PlayState extends MusicBeatState
 
 			/*boyfriend.stunned = true;
 	
-																			// get stunned for 1/60 of a second, makes you able to
-																			new FlxTimer().start(1 / 60, function(tmr:FlxTimer)
-																			{
-																				boyfriend.stunned = false;
+							// get stunned for 1/60 of a second, makes you able to
+							new FlxTimer().start(1 / 60, function(tmr:FlxTimer)
+							{
+								boyfriend.stunned = false;
 			});*/
 
 			if (boyfriend.hasMissAnimations)
