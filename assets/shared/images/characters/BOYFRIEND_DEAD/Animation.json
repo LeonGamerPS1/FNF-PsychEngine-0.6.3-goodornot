@@ -1,0 +1,48 @@
+{
+"AN":{
+"N":"BoyFriend_Assets",
+"SN":"__BTA_TEMP_SPRITEMAP_PACKED_SYMBOL",
+"TL":{
+"L":[
+{
+"LN":"Ebene_1",
+"FR":[
+{
+"N":"BF Dead confirm",
+"I":0,
+"DU":33,
+"E":[
+{"SI":{
+"SN":"BF Dead confirm",
+"FF":0,
+"ST":"G",
+"TRP":{"x":0,"y":0},
+"LP":"LP",
+"MX":[1,0,0,1,-254.6,-1198.6]
+}}]},{
+"N":"BF Dead Loop",
+"I":33,
+"DU":33,
+"E":[
+{"SI":{
+"SN":"BF Dead Loop",
+"FF":0,
+"ST":"G",
+"TRP":{"x":0,"y":0},
+"LP":"LP",
+"MX":[1,0,0,1,-236.75,-716.15]
+}}]},{
+"N":"BF dies",
+"I":66,
+"DU":57,
+"E":[
+{"SI":{
+"SN":"BF dies",
+"FF":0,
+"ST":"G",
+"TRP":{"x":0,"y":0},
+"LP":"LP",
+"MX":[1,0,0,1,-252.5,-1199.45]
+}}]}
+]}
+]}}}

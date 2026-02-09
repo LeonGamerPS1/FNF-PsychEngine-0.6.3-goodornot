@@ -2,7 +2,7 @@
 	"animations": [
 		{
 			"offsets": [
-				0,
+				-6,
 				0
 			],
 			"loop": false,
@@ -13,47 +13,47 @@
 		},
 		{
 			"offsets": [
-				12,
-				-6
+				-5,
+				2
 			],
 			"loop": false,
 			"fps": 24,
 			"anim": "singLEFT",
 			"indices": [],
-			"name": "BF NOTE LEFT0"
+			"name": "BF NOTE LEFT"
 		},
 		{
 			"offsets": [
-				-10,
-				-50
+				-20,
+				-41
 			],
 			"loop": false,
 			"fps": 24,
 			"anim": "singDOWN",
 			"indices": [],
-			"name": "BF NOTE DOWN0"
+			"name": "BF NOTE DOWN"
 		},
 		{
 			"offsets": [
-				-29,
-				27
+				-26,
+				71
 			],
 			"loop": false,
 			"fps": 24,
 			"anim": "singUP",
 			"indices": [],
-			"name": "BF NOTE UP0"
+			"name": "BF NOTE UP"
 		},
 		{
 			"offsets": [
-				-38,
-				-7
+				-62,
+				13
 			],
 			"loop": false,
 			"fps": 24,
 			"anim": "singRIGHT",
 			"indices": [],
-			"name": "BF NOTE RIGHT0"
+			"name": "BF NOTE RIGHT"
 		},
 		{
 			"offsets": [
@@ -101,7 +101,7 @@
 		},
 		{
 			"offsets": [
-				0,
+				-6,
 				0
 			],
 			"indices": [
@@ -117,8 +117,8 @@
 		},
 		{
 			"offsets": [
-				12,
-				-6
+				-5,
+				2
 			],
 			"indices": [
 				12,
@@ -129,12 +129,12 @@
 			"fps": 24,
 			"anim": "singLEFT-loop",
 			"loop": true,
-			"name": "BF NOTE LEFT0"
+			"name": "BF NOTE LEFT"
 		},
 		{
 			"offsets": [
-				-38,
-				-7
+				-62,
+				13
 			],
 			"indices": [
 				58,
@@ -145,12 +145,12 @@
 			"fps": 24,
 			"anim": "singRIGHT-loop",
 			"loop": true,
-			"name": "BF NOTE RIGHT0"
+			"name": "BF NOTE RIGHT"
 		},
 		{
 			"offsets": [
-				-29,
-				27
+				-26,
+				71
 			],
 			"indices": [
 				11,
@@ -161,12 +161,12 @@
 			"fps": 24,
 			"anim": "singUP-loop",
 			"loop": true,
-			"name": "BF NOTE UP0"
+			"name": "BF NOTE UP"
 		},
 		{
 			"offsets": [
-				-10,
-				-50
+				-20,
+				-41
 			],
 			"indices": [
 				26,
@@ -177,7 +177,7 @@
 			"fps": 24,
 			"anim": "singDOWN-loop",
 			"loop": true,
-			"name": "BF NOTE DOWN0"
+			"name": "BF NOTE DOWN"
 		}
 	],
 	"no_antialiasing": false,

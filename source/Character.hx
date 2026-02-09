@@ -173,6 +173,7 @@ class Character extends FlxAnimate
 						frames = Paths.getAnimateAtlas(json.image);
 				}
 				imageFile = json.image;
+				useRenderTexture = true;
 
 				if (json.scale != 1)
 				{

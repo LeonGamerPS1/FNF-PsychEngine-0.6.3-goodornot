@@ -84,6 +84,9 @@ class CharacterEditorState extends MusicBeatState
 	override function create()
 	{
 		// FlxG.sound.playMusic(Paths.music('breakfast'), 0.5);
+		Conductor.songPosition = FlxG.sound.music.time;
+		Conductor.changeBPM(128.0);
+		FlxG.sound.playMusic(Paths.music('offsetSong'), 1, true);
 
 		camEditor = new FlxCamera();
 		camHUD = new FlxCamera();
@@ -1196,9 +1199,24 @@ class CharacterEditorState extends MusicBeatState
 		#end
 	}
 
+	override function beatHit()
+	{
+		super.beatHit();
+		leHealthIcon.scale.set(1.2, 1.2);
+		leHealthIcon.updateHitbox();
+	}
+
 	override function update(elapsed:Float)
 	{
+		Conductor.songPosition = FlxG.sound.music.time;
 		MusicBeatState.camBeat = FlxG.camera;
+
+		if (leHealthIcon.scale.y != 1)
+		{
+			var mult:Float = flixel.math.FlxMath.lerp(1, leHealthIcon.scale.x, CoolUtil.boundTo(1 - (elapsed * 9), 0, 1));
+			leHealthIcon.scale.set(mult, mult);
+			leHealthIcon.updateHitbox();
+		}
 		if (char.animationsArray[curAnim] != null)
 		{
 			textAnim.text = char.animationsArray[curAnim].anim;
@@ -1368,7 +1386,6 @@ class CharacterEditorState extends MusicBeatState
 
 	var _file:FileReference;
 
-	
 	function onSaveComplete(_):Void
 	{
 		_file.removeEventListener(Event.COMPLETE, onSaveComplete);
