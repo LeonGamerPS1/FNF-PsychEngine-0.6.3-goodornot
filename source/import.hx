@@ -1,2 +1,30 @@
-import Paths;
 import openfl.display.BitmapData;
+import funkin.api.Discord;
+import funkin.substates.MusicBeatSubstate;
+import funkin.backend.Song;
+import funkin.backend.Conductor;
+import funkin.backend.CoolUtil;
+import funkin.backend.Paths;
+import funkin.backend.Controls;
+import funkin.objects.ui.*;
+import funkin.objects.*;
+import funkin.backend.PlayerSettings;
+import funkin.states.editors.*;
+import funkin.backend.Section;
+import funkin.backend.ClientPrefs;
+import funkin.api.Highscore;
+import funkin.shaders.*;
+import funkin.objects.gameplay.*;
+import funkin.objects.gameplay.DialogueBoxPsych;
+import funkin.objects.ui.Alphabet;
+import funkin.objects.ui.Achievements;
+import funkin.objects.note.*;
+import funkin.objects.note.Note;
+import funkin.states.*;
+import funkin.substates.*;
+import funkin.objects.gameplay.Character;
+import funkin.objects.gameplay.Boyfriend;
+import funkin.backend.*;
+#if LUA_ALLOWED import funkin.scripting.FunkinLua; #end
+
+using StringTools;
