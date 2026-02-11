@@ -39,8 +39,7 @@ class Main extends Sprite
 
 	public static function main():Void
 	{
-		// thanks vortex
-	#if cpp	haxe.Log.trace = (v:Dynamic, ?infos:haxe.PosInfos) -> untyped __cpp__("std::wout << {0}", '${haxe.Log.formatOutput(v, infos)}\n'); #end
+
 		Lib.current.addChild(new Main());
 	}
 
